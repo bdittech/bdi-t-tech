@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำสถานที่ภายในวิทยาลัยเทคโนโลยี</title>
+
+    <!-- ทำให้เลื่อนหน้าแบบนุ่ม -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Sarabun", sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #004aad, #007bff);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #003580;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            padding: 12px 18px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        nav a:hover {
+            background-color: #0056d2;
+            transform: scale(1.05);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #e9f1ff;
+        }
+
+        .container {
+            padding: 30px 10%;
+        }
+
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #003580;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        
+    </style>
+    
+
+
+    <!-- ไลบรารีแสดงภาพ 360 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+</head>
+
+<body>
+
+<header>
+    <img src="images/bdi-logo.png" alt="โลโก้ BDI" style="height:80px; margin-bottom:10px;">
+    <h1>แนะนำสถานที่ภายในวิทยาลัยเทคโนโลยี ไทย-ไต้หวัน (BDI)</h1>
+    <p>ระบบนำทางและข้อมูลอาคารเรียนสำหรับนักศึกษาใหม่</p>
+ </header>
+    
+
+<nav>
+    <a href="#home">หน้าแรก</a>
+    <a href="#locations">สถานที่สำคัญ</a>
+    <a href="#tour360">ชมสถานที่ 360°</a>
+    <a href="#contact">ติดต่อ</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>ยินดีต้อนรับสู่วิทยาลัยเทคโนโลยี</h2>
+    <p>ค้นหาสถานที่ต่าง ๆ ภายในวิทยาลัยได้ง่าย ๆ ด้านล่างนี้</p>
+</section>
+
+<section class="container" id="locations">
+    
+    <a href="building-a.html" style="text-decoration:none; color:inherit;">
+        <div class="card">
+            <img src="images/bg1.jpg" alt="อาคารเรียน">
+            <div class="card-content">
+                <h3>อาคารเรียน A</h3>
+                <p>อาคารเรียนหลัก ใช้สำหรับเรียนวิชาทั่วไปและห้องปฏิบัติการคอมพิวเตอร์</p>
+            </div>
+        </div>
+    </a>
+     
+
+        <div class="card">
+            <img src="https://source.unsplash.com/400x300/?library" alt="ห้องสมุด">
+            <div class="card-content">
+                <h3>ห้องสมุด</h3>
+                <p>แหล่งค้นคว้าข้อมูล หนังสือ และพื้นที่อ่านหนังสือสำหรับนักศึกษา</p>
+            </div>
+        </div>
+
+        <a href="canteen.html" style="text-decoration:none; color:inherit;">
+                <div class="card">
+                    <img src="images/canteen.jpg" alt="โรงอาหาร">
+                    <div class="card-content">
+                        <h3>โรงอาหาร</h3>
+                        <p>ศูนย์รวมร้านอาหารและเครื่องดื่มสำหรับนักศึกษา</p>
+                    </div>
+                </div>
+    </a>
+        
+
+    </div>
+</section>
+
+<!-- ส่วนแสดงภาพ 360 องศา -->
+<section class="container" id="tour360">
+    <h2>🧭 ชมสถานที่แบบ 360 องศา</h2>
+    <p>ลากเมาส์หรือใช้นิ้วเลื่อนเพื่อหมุนดูรอบ ๆ</p>
+    <div id="panorama" style="width:100%; height:400px; border-radius:10px;"></div>
+</section>
+
+<section class="container" id="contact">
+    <h2>📞 ติดต่อวิทยาลัย</h2>
+    <p>วิทยาลัยเทคโนโลยี ไทย-ไต้หวัน (BDI)</p>
+    <p>โทรศัพท์: 0xx-xxx-xxxx</p>
+    <p>อีเมล: info@bdi.ac.th</p>
+    <p>ที่อยู่: วิทยาลัยเทคโนโลยี ไทย-ไต้หวัน (BDI) จังหวัดของคุณ</p>
+</section>
+
+
+<footer>
+    © 2026 วิทยาลัยเทคโนโลยี | เว็บไซต์แนะนำสถานที่
+</footer>
+
+<!-- เปิดภาพพาโนรามา 360 -->
+<script>
+pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": "images/bdi0.jpg",
+    "autoLoad": true,
+    "showZoomCtrl": true
+});
+</script>
+
+</body>
+</html>

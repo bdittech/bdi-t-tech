@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อาคารเรียน A - วิทยาลัยเทคโนโลยี</title>
+
+    <!-- ไฟล์สำหรับแสดงภาพ 360 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Sarabun", sans-serif;
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #004aad, #007bff);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #004aad;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        #panoramaA {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 16px;
+            background: #004aad;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .back-btn:hover {
+            background: #003080;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>อาคารเรียน A</h1>
+    <p>ข้อมูลรายละเอียดอาคารเรียน</p>
+</header>
+
+<div class="container">
+    <h2>รายละเอียดอาคาร</h2>
+    <p><strong>ประเภทอาคาร:</strong> อาคารเรียนหลัก</p>
+    <p><strong>จำนวนชั้น:</strong> 4 ชั้น</p>
+
+    <h3>ห้องสำคัญภายในอาคาร</h3>
+    <ul>
+        <li>ห้องปฏิบัติการคอมพิวเตอร์</li>
+        <li>ห้องเรียนทฤษฎี</li>
+        <li>ห้องพักครู</li>
+        <li>ห้องประชุม</li>
+    </ul>
+
+    <p>📍 อาคารนี้ใช้สำหรับการเรียนการสอนวิชาพื้นฐานและเทคโนโลยีสารสนเทศ</p>
+
+    <!-- ส่วนแสดงภาพ 360 -->
+    <h2>ชมอาคาร A แบบ 360 องศา</h2>
+    <div id="panoramaA"></div>
+
+    <a href="main.html" class="back-btn">⬅ กลับหน้าหลัก</a>
+</div>
+
+<!-- คำสั่งให้แสดงภาพ 360 -->
+<script>
+    pannellum.viewer('panoramaA', {
+        "default": {
+            "firstScene": "point1",
+            "sceneFadeDuration": 800,
+            "autoLoad": true
+        },
+    
+        "scenes": {
+            "point1": {
+                "title": "หน้าตึกอาคาร A",
+                "type": "equirectangular",
+                "panorama": "images/buildingA-front.jpg",
+                "hotSpotDebug": true,
+                "hotSpots": [
+                    {
+                        "pitch": -6,
+                        "yaw": 0,
+                        "type": "scene",
+                        "text": "เดินไปทางประตู",
+                        "sceneId": "point2"
+                    }
+                ]
+            },
+    
+            "point2": {
+                "title": "หน้าประตูทางเข้า",
+                "type": "equirectangular",
+                "panorama": "images/buildingA-hall.jpg",
+                "hotSpotDebug": true,
+                "hotSpots": [
+                    {
+                        "pitch": -6,
+                        "yaw": 0,
+                        "type": "scene",
+                        "text": "เข้าอาคาร",
+                        "sceneId": "point3"
+                    },
+                    {
+                        "pitch": -6,
+                        "yaw": 180,
+                        "type": "scene",
+                        "text": "ย้อนกลับหน้าตึก",
+                        "sceneId": "point1"
+                    }
+                ]
+            },
+    
+            "point3": {
+                "title": "โถงกลางอาคาร",
+                "type": "equirectangular",
+                "panorama": "images/buildingA-hall-inside.jpg",
+                "hotSpotDebug": true,
+                "hotSpots": [
+                    {
+                        "pitch": -6,
+                        "yaw": 40,
+                        "type": "scene",
+                        "text": "ไปทางห้องคอม",
+                        "sceneId": "point4"
+                    },
+                    {
+                        "pitch": -6,
+                        "yaw": 200,
+                        "type": "scene",
+                        "text": "ออกไปหน้าประตู",
+                        "sceneId": "point2"
+                    }
+                ]
+            },
+    
+            "point4": {
+                "title": "หน้าห้องคอมพิวเตอร์",
+                "type": "equirectangular",
+                "panorama": "images/a4.jpg",
+                "hotSpotDebug": true,
+                "hotSpots": [
+                    {
+                        "pitch": -6,
+                        "yaw": 10,
+                        "type": "scene",
+                        "text": "เข้าไปในห้องคอม",
+                        "sceneId": "point5"
+                    },
+                    {
+                        "pitch": -6,
+                        "yaw": 190,
+                        "type": "scene",
+                        "text": "กลับโถงกลาง",
+                        "sceneId": "point3"
+                    }
+                ]
+            },
+    
+            "point5": {
+                "title": "ภายในห้องคอมพิวเตอร์",
+                "type": "equirectangular",
+                "panorama": "images/a5.jpg",
+                "hotSpotDebug": true,
+                "hotSpots": [
+                    {
+                        "pitch": -6,
+                        "yaw": 180,
+                        "type": "scene",
+                        "text": "ออกจากห้อง",
+                        "sceneId": "point4"
+                    }
+                ]
+            }
+        }
+    });
+    </script>
+    
+
+    
+
+</body>
+</html>
